@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name Facebook with Google Maps
-// @version 0.1
+// @version 0.15
 // @description Changes Bing Maps links on Facebook to Google Maps links.
 // @match http://www.facebook.com/*
 // @match https://www.facebook.com/*
