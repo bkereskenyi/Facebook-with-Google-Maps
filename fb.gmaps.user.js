@@ -15,12 +15,13 @@ try {
 			address: '',
 			gmapsUrl: 'http://maps.google.com/maps?q=',
 			gmapsLink: '',
-			currentUrl: document.location.href,
-			finished: false,
 			
 			getPageType: function() {
 				this.eventMap = document.getElementById('pagelet_event_details');
-				this.infoMap = document.getElementById('pagelet_info');
+				this.infoMap = document.getElementById('pagelet_info') || document.getElementById('pagelet_profile_info');
+				
+				// This will replace check-in based maps some day...
+				// this.checkInTimelineMap = document.querySelectorAll('.fbTimelineFlyoutMap .fbPlaceFlyout~a');
 				
 				if (!this.eventMap && !this.infoMap) {
 					return;
@@ -47,8 +48,8 @@ try {
 			},
 			
 			getInfoAddress: function() {
-				var addressCont = document.querySelector('.uiInfoTable.profileInfoTable.pageInfoTable a[href^="http://bing.com/maps"]');
-				
+				var addressCont = document.querySelector('.uiInfoTable.profileInfoTable a[href^="http://bing.com/maps"]');
+
 				this.address = addressCont.textContent;
 			},
 			
